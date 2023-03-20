@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Module 5</title>
+</head>
+
+<body>
+    <p id="dog"></p>
+    <p id="dog2"></p>
+    <p id="dog3"></p>
+    <p id="dog4"></p>
+
+    <script>
+        var myDog = new Object();
+        myDog.name = "Ace Hart";
+        myDog.breed = "German Shepard";
+        myDog.tvShow = "Dog City";
+        myDog.mySound = "Im not very tough";
+        //document.getElementById("dog").innerHTML = "Hello, my name is " + myDog.name + ", I am a " + myDog.breed + " I was on the tv show" + myDog.tvShow + " and when i bark you know that " + myDog.mySound,
+
+    </script>
+    <script>
+        const myDogConst = {
+            name: "Astro",
+            breed: "Great Dane",
+            tvShow: "The Jetsons",
+            mySound: "Im not very tough",
+            canTalk: Boolean,
+            myGreeting: function () {
+                if (myDogConst.canTalk == true)
+                    document.getElementById("dog2").innerHTML = "Hello, my name is " + myDogConst.name + ", I am a " + myDogConst.breed + " I was on the tv show" + myDogConst.tvShow + ",  I can talk!!!!! ";
+                else {
+                    document.getElementById("dog2").innerHTML = "I can not talk"
+                }
+            }
+        }
+        myDogConst.canTalk = true
+        myDogConst.myGreeting()
+    </script>
+    <script>
+        function Dog(name, breed, tvShow, mySound, canTalk = Boolean) {
+            this.name = name;
+            this.breed = breed;
+            this.tvShow = tvShow;
+            this.mySound = mySound;
+            this.canTalk = canTalk;
+        }
+        let frank = new Dog("Bailey", "Australian Shepard", "Clifford", "Big Red Dog", true)
+        for (const x in frank) {
+            if (frank.canTalk == true)
+                document.getElementById("dog3").innerHTML = "Hello, my name is " + frank.name + ", I am a " + frank.breed + " I was on the tv show" + frank.tvShow + ",  I can talk!!!!! ";
+            else {
+                document.getElementById("dog3").innerHTML = "Hello, my name is " + frank.name + ", I am a " + frank.breed + " I was on the tv show" + frank.tvShow + ",  I can not talk!!!!! ";
+            }
+        }
+
+
+        let frank2 = new Dog("Bandit", "Terrier", "Dog City", "jonny Quest", canTalk = false)
+        for (const x in frank2) {
+            if (frank2.canTalk == true)
+                document.getElementById("dog4").innerHTML = "Hello, my name is " + frank2.name + ", I am a " + frank2.breed + " I was on the tv show" + frank2.tvShow + ",  I can talk!!!!! ";
+            else {
+                document.getElementById("dog4").innerHTML = "Hello, my name is " + frank2.name + ", I am a " + frank2.breed + " I was on the tv show" + frank2.tvShow + ",  I can not talk!!!!! ";
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
